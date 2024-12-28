@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun Game</title>
+    <style>
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 50px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: burlywood;
+        }
+        .btn:hover {
+            background-color: #e48079;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 60px;
+            color: green;
+        }
+        div h3{
+            font-size: 30px;
+        }
+        div p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Snake Water Gun Game</h1>
+    <form action="/play" method="POST">
+        <button class="btn" type="submit" name="choice" value="s">Snake</button>
+        <button class="btn" type="submit" name="choice" value="w">Water</button>
+        <button class="btn" type="submit" name="choice" value="g">Gun</button>
+    </form>
+    <div>
+        <h3>Scores:</h3>
+        <p>User: {{ user_score }}</p>
+        <p>Computer: {{ computer_score }}</p>
+    </div>
+    {% if result %}
+        <p class="result">{{ result|safe }}</p>
+    {% endif %}
+</body>
+</html>
